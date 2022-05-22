@@ -1,0 +1,27 @@
+/* pages/orders/orders.wxss */
+.container{
+    padding: 0;
+}
+.header{
+    display: flex;
+    width: 100%;
+    background-color: #585888;
+    height: 60px;
+    color: #d3d3ef;
+}
+
+.left{
+    margin-left: 5%;
+    font-size: 24px;
+    line-height: 55px;
+}
+
+.right::after{
+    content: "支付";
+}
+
+.right{
+    margin-left: 85%;
+    line-height: 55px;
+    position: absolute;
+}

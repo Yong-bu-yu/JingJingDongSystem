@@ -1,0 +1,24 @@
+/* compoents/titleBar/titleBar.wxss */
+
+.header{
+    display: flex;
+    background-color: #585888;
+    height: 60px;
+    color: #d3d3ef;
+}
+
+.left{
+    margin-left: 5%;
+    font-size: 24px;
+    line-height: 55px;
+}
+
+.right::after{
+    content: "管理";
+}
+
+.right{
+    margin-left: 85%;
+    line-height: 55px;
+    position: absolute;
+}

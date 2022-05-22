@@ -1,0 +1,33 @@
+<div class="circle">
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="circle3"></div>
+  <div class="circle4"></div>
+</div>
+<form bindsubmit="Login">
+  <div class="box">
+    <div class="image">
+      <image src="/pages/image/18-音乐.png" />
+    </div>
+    <div class="login">
+      <div class="userName">
+        <image src="/pages/image/用户.png" />
+        <input type="text" name="userName" bindfocus="onFocus" bindblur="onBlur" id="userName" value="{{user.username}}"/>
+        <label animation="{{id=='userName'?animationData:null}}" style="color:{{id=='userName'?color:null}};">用户名</label>
+      </div>
+      <div class="userPassword">
+        <image src="/pages/image/密码.png" />
+        <input type="password" name="userPassword" bindfocus="onFocus" bindblur="onBlur"
+          id="userPassword" />
+        <label animation="{{id=='userPassword'?animationData:null}}" style="color:{{id=='userPassword'?color:null}};">密码</label>
+      </div>
+      <div class="label">
+        <label bindtap="Register">注册</label>
+        <label>忘记密码</label>
+      </div>
+      <div class="submit" style="width: 300px;">
+        <button formType="submit">登录</button>
+      </div>
+    </div>
+  </div>
+</form>

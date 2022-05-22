@@ -1,0 +1,43 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/login",
+        "pages/register/register",
+        "pages/logs/logs",
+        "pages/shoppingcart/shoppingcart",
+        "pages/user/user",
+        "pages/orders/orders",
+        "pages/commodityDetails/commodityDetails"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#27273C",
+        "navigationBarTitleText": "京京东电商服务平台",
+        "navigationBarTextStyle": "white"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "color": "#5b5b5b",
+        "selectedColor": "#7fabfd",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/shoppingcart/shoppingcart",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "van-icon": "@vant/weapp/icon/index"
+    }
+}

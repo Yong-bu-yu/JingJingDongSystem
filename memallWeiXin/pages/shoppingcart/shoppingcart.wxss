@@ -1,0 +1,65 @@
+/* pages/shoppingcart/shoppingcart.wxss */
+
+.card{
+    --grid-background-color: #f4f4fa;
+}
+
+.van-grid{
+    margin: 15px;
+    border: #d4d4ef solid 1px;
+    border-radius: 15px;
+    background-color: #f4f4fa;
+}
+
+.van-grid-item__content{
+    --grid-item-content-background-color: #f4f4fa;
+    background-color: var(--grid-item-content-background-color);
+}
+.van-grid-item__content--surround:after{
+    display: none;
+}
+
+.money{
+    color: #ff664d;
+}
+.money::before{
+    content: "￥";
+}
+
+.reduce{
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #d4d4f0;
+    border: #8e8ed8 1px solid;
+    border-radius: 15px 0 0 15px;
+}
+.number{
+    background-color: #fff;
+    border: #8e8ed8 1px solid;
+    width: 55px;
+    height: 23px;
+    text-align: center;
+}
+.add{
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #d4d4f0;
+    border: #8e8ed8 1px solid;
+    border-radius: 0 15px 15px 0;
+}
+
+.van-stepper{
+    display: flex;
+}
+.van-stepper__minus,.van-stepper__plus{
+    --padding-base: 0px;
+    --stepper-background-color:#fff,
+    background-color: var(--stepper-background-color,#fff);
+    border: 1px solid #8e8ed8;
+    margin: var(0px);
+    padding: var(--padding-base,0px);
+}

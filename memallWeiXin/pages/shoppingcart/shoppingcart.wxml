@@ -1,0 +1,32 @@
+<!--pages/shoppingcart/shoppingcart.wxml-->
+<title-bar text="购物车"></title-bar>
+<van-checkbox-group value="{{ result }}" bind:change="onChange">
+    <scroll-view scroll-y="true" style="height: 800rpx;">
+        <block wx:for="{{userShoppingCart}}" wx:key="index">
+            <van-grid column-num="3" gutter="{{ 10 }}">
+                <van-grid-item use-slot>
+                    <van-checkbox name="{{item.shoppingCartID}};{{item.name}};{{item.type}};{{item.quantity}};{{item.price}}" checked-color="#9595dc" style="margin-top: 35px;"></van-checkbox>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <view style="font-weight: 900;font-size: 24px;">
+                        {{item.name}}
+                    </view>
+                    <view style="color: #787878;font-size: 12px;margin-top: 15px;">
+                        总共{{item.quantity}}件
+                    </view>
+                    <view class="money">
+                        {{item.price}}
+                    </view>
+                </van-grid-item>
+                <van-grid-item use-slot>
+                    <view style="display: flex;margin-right: 15px;margin-top: 85%;">
+                        <van-stepper value="{{ item.quantity }}" bind:change="onNumberChange" id="{{item.id}}" data-shoppingCartID="{{item.shoppingCartID}}" integer min="0"/>
+                    </view>
+                </van-grid-item>
+            </van-grid>
+        </block>
+    </scroll-view>
+</van-checkbox-group>
+<van-submit-bar price="{{ price }}" button-text="结算（{{number}})" bind:submit="insertOrders">
+    <van-checkbox value="{{isAll}}" bind:change="onSelectAll" checked-color="#9595dc">全选</van-checkbox>
+</van-submit-bar>

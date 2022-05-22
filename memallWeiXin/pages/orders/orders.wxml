@@ -1,0 +1,55 @@
+<!--pages/orders/orders.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="left" bindtap="toBack">
+            {{text}}
+        </view>
+        <view class="right">
+        </view>
+    </view>
+</view>
+
+<scroll-view scroll-y="true" style="height: 1000rpx;">
+    <block wx:for="{{orders}}" wx:key="index">
+        <view
+            style="margin-top: 15px;color: #8c8c9e;border: 1px #8c8c9e solid; margin-left: 15px;margin-right: 15px; border-radius: 15px;box-shadow: #8c8c9e 5px 5px 5px;">
+            <van-cell-group inset>
+                <van-cell>
+                    <view style="display: flex;width: 100%;margin-top: 15px;">
+                        <view style="color: #8c8c9e;width: 45%;padding-right: 15px;">商品名称：</view>
+                        <view style="margin-left: 35px;">{{item.name}}</view>
+                    </view>
+                </van-cell>
+                <van-cell>
+                    <view style="display: flex;width: 100%;margin-top: 15px;">
+                        <view style="color: #8c8c9e;width: 45%;padding-right: 15px;">商品类型：</view>
+                        <view style="margin-left: 35px;">{{item.type}}</view>
+                    </view>
+                </van-cell>
+                <van-cell>
+                    <view style="display: flex;width: 100%;margin-top: 15px;">
+                        <view style="color: #8c8c9e;width: 45%;padding-right: 15px;">商品数量：</view>
+                        <view style="margin-left: 35px;">{{item.quantity}}</view>
+                    </view>
+                </van-cell>
+                <van-cell>
+                    <view style="display: flex;width: 100%;margin-top: 25px;">
+                        <view style="color: #8c8c9e;width: 45%;padding-right: 15px;">总计：</view>
+                        <view style="color: #ff4200;margin-left: 21px;">￥{{item.sum}}</view>
+                    </view>
+                </van-cell>
+                <van-cell>
+                    <view style="display: flex;width: 100%;margin-top: 25px;">
+                        <view style="color: #8c8c9e;width: 45%;padding-right: 15px;">
+                            <van-button type="default" round custom-style="width: 235rpx;" bindtap="cancelPay" id="{{index}}">取消
+                            </van-button>
+                        </view>
+                        <view style="color: #ff4200;">
+                            <van-button type="danger" round custom-style="width: 235rpx;" id="{{item.shoppingCartID}}" disabled="{{item.is_pay == 1}}" bind:click="pay">确定</van-button>
+                        </view>
+                    </view>
+                </van-cell>
+            </van-cell-group>
+        </view>
+    </block>
+</scroll-view>

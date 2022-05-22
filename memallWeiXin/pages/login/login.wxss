@@ -1,0 +1,209 @@
+.box {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
+}
+
+.image {
+  width: 100%;
+  height: 35%;
+  /* background: rgb(74, 140, 238); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image image{
+  width: 230px;
+}
+
+.login {
+  width: 100%;
+  height: 65%;
+  /* background: rgb(226, 105, 105); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.userName,
+.userPassword,
+.submit,
+.label {
+  width: 85%;
+  height: 15%;
+  /* background: rgb(203, 250, 93); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 5%;
+}
+
+.userName image,
+.userPassword image {
+  width: 50px;
+  height: 50px;
+}
+
+.submit {
+  justify-content: center;
+}
+
+.label {
+  color: rgb(128, 128, 128);
+}
+
+.userName input,
+.userPassword input {
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: #a357aa 3px solid;
+  width: 70%;
+  height: 50px;
+  padding-left: 5%;
+  caret-color: violet;
+  font-size: 24px;
+  color: #fff;
+}
+
+.userName label,
+.userPassword label {
+  color: #ffffff;
+  position: absolute;
+  font-size: 17px;
+  left: 35%;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.userName input:focus + label,
+.userPassword input:focus + label {
+  font-size: 24px;
+  transform: translateY(-30px);
+  color: #a357aa;
+}
+
+.submit button {
+  color: white;
+  background-color: #a357aa;
+  width: 30%;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+}
+
+@keyframes move_wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.circle{
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+
+.circle1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  background: rgba(255, 255, 255, 0.336);
+  border-radius: 45%;
+  animation-name: ex1;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+.circle2 {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  width: 1000px;
+  height: 1000px;
+  background: rgba(255, 255, 255, 0.336);
+  border-radius: 45%;
+  animation-name: ex2;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+
+.circle3 {
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  width: 1000px;
+  height: 1000px;
+  background: rgba(255, 255, 255, 0.418);
+  border-radius: 45%;
+  animation-name: ex1;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  z-index: 3;
+}
+
+.circle4 {
+  position: absolute;
+  top: 65%;
+  left: 75%;
+  width: 1000px;
+  height: 1000px;
+  background: rgba(255, 255, 255, 0.397);
+  border-radius: 45%;
+  animation-name: ex1;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  z-index: 4;
+}
+
+@keyframes ex1 {
+  0% {
+      transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+      transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+      transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+@keyframes ex2 {
+  0% {
+      transform: translate(-50%, 0) rotateZ(-0deg);
+  }
+  50% {
+      transform: translate(-50%, -2%) rotateZ(-180deg);
+  }
+  100% {
+      transform: translate(-50%, 0%) rotateZ(-360deg);
+  }
+}

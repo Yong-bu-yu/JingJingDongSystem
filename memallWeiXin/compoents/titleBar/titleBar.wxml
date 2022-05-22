@@ -1,0 +1,10 @@
+<!--compoents/titleBar/titleBar.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="left">
+            {{text}}
+        </view>
+        <view class="right">
+        </view>
+    </view>
+</view>

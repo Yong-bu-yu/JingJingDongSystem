@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" input-align="center" bind:search="onSearch" />
+<scroll-view scroll-y="true" style="height: 940rpx;" bindscrolltolower="commodityLoad">
+    <block wx:for="{{records}}" wx:key="id">
+        <van-card id="{{item.id}}" thumb="http://dummyimage.com/200x200/7c79f2&text=商品" desc="{{item.type}}"
+            title="{{item.name}}" price="{{item.price}}" num="{{item.quantity}}" bindtap="toCommodityDetails">
+            <view slot="footer">
+                <van-button size="mini" type="info" bindtap="insertShoppingCart" id="{{item.id}}">添加到购物车</van-button>
+            </view>
+        </van-card>
+    </block>
+</scroll-view>

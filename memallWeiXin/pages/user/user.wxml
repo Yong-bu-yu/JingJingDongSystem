@@ -1,0 +1,69 @@
+<!--pages/user/user.wxml-->
+<wxs module="time">
+    var format = function formatTime(date){
+        var t = getDate(date)
+        var tStr = t.getFullYear()+'-'+(t.getMonth()+1)+'-'+
+                   t.getDate()+' '+t.getHours()+':'+t.getMinutes()
+        return tStr
+    }
+    module.exports.format = format
+</wxs>
+
+<title-bar text="我的"></title-bar>
+<view style="margin-top: 15px;">
+    <van-cell-group inset>
+        <van-cell title="个人信息" value="点击查看" is-link bind:click="userInfo" />
+        <van-popup show="{{ show.userInfo }}" position="bottom" custom-style="height: 90%;background-color:#f4f4fa"
+            bind:close="onClose" round closeable>
+            <view style="margin-top: 45px;">
+                <van-cell-group inset>
+                    <van-cell title="用户名" value="{{user.username}}" />
+                    <van-cell title="类别" value="{{user.type}}" />
+                </van-cell-group>
+            </view>
+        </van-popup>
+
+        <van-cell title="重置密码" value="点击修改" is-link bind:click="resetPassword" />
+        <van-popup show="{{ show.resetPassword }}" position="bottom" custom-style="height: 90%;background-color:#f4f4fa"
+            bind:close="onClose" round closeable>
+            <view style="margin-top: 45px;">
+                <van-cell-group inset>
+                    <view style="margin: 5px;">
+                        不输入密码就不会修改密码
+                    </view>
+                    <van-field model:value="{{ user.username }}" label="用户名" placeholder="请输入用户名" />
+                    <van-field model:value="{{ user.oldpassword }}" type="password" label="旧密码" placeholder="请输入旧密码" />
+                    <van-field model:value="{{ user.newpassword }}" type="password" label="新密码" placeholder="请输入新密码" />
+                    <van-cell>
+                        <van-button round type="danger">确定修改信息</van-button>
+                    </van-cell>
+                </van-cell-group>
+            </view>
+        </van-popup>
+
+        <van-cell title="我的订单" value="支付或者查看" is-link bind:click="orders" />
+        <van-popup show="{{ show.orders }}" position="bottom" custom-style="height: 90%;background-color:#f4f4fa"
+            bind:close="onClose" round closeable>
+            <view style="margin-top: 45px;">
+                <scroll-view scroll-y="true" style="height: 850rpx;">
+                    <block wx:for="{{orders}}" wx:key="index">
+                        <van-cell-group inset>
+                            <van-cell title="订单编号" value="{{item.number}}" />
+                            <van-cell title="商品名称" value="{{item.name}}" />
+                            <van-cell title="商品数量" value="{{item.quantity}}" />
+                            <van-cell title="商品单价" value="{{item.price}}￥" />
+                            <van-cell title="商品总价" value="{{item.quantity * item.price}}￥" />
+                            <van-cell title="订单时间" value="{{time.format(item.time)}}" />
+                            <van-cell title="是否支付" value="{{item.is_pay == 1 ? '是':'否'}}" />
+                            <van-cell>
+                                <van-button round type="danger" disabled="{{item.is_pay == 1}}" bind:click="pay" id="{{item.id}}">支付</van-button>
+                            </van-cell>
+                        </van-cell-group>
+                    </block>
+                </scroll-view>
+            </view>
+        </van-popup>
+
+        <van-cell title="退出登录" value="点击退出" is-link bind:click="logout" />
+    </van-cell-group>
+</view>
