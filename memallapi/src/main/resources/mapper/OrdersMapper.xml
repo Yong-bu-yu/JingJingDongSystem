@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.memallapi.dao.OrdersDao">
+
+    <resultMap id="BaseResultMap" type="com.example.memallapi.entity.Orders">
+        <id column="id" property="id"/>
+        <id column="number" property="number"/>
+        <id column="userID" property="userID"/>
+        <id column="commodityID" property="commodityID"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, number, userID, commodityID
+	</sql>
+
+    <select id="userOrders" resultType="hashmap" parameterType="long">
+		select sc.id,number,name,sc.quantity,price,time,is_pay from commodity as c join
+    shopping_cart as sc on sc.user_i_d=#{id} and c.id=sc.commodity_i_d
+    join orders o on sc.id = o.shopping_cart_i_d
+	</select>
+
+    <select id="userPay" resultType="hashmap">
+		select name,count(*) as value from shopping_cart as a join commodity as c on a.commodity_i_d = c.id
+	where exists(select * from orders where a.id = orders.shopping_cart_i_d) group by name
+	</select>
+</mapper>
