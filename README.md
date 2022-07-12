@@ -1,10 +1,10 @@
-# JingDongDongSystem
+# JingJingDongSystem
 
-<h1>京东东电子商城后台系统-登录界面</h1>
+<h1>京京东电子商城后台系统-登录界面</h1>
 
 ![](https://assets.codemart.com/upload/72911654498617573.png)
 
-<h1>京东东电子商城系统后台-用户的添加</h1>
+<h1>京京东电子商城系统后台-用户的添加</h1>
 
 ![](https://assets.codemart.com/upload/7131654498612819.png)
 
